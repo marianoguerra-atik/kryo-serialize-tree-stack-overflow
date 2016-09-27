@@ -1,9 +1,9 @@
 package com.gnandoo;
 
-public interface NodeBase<T> {
-	public void set(String key, T value);
-	public void set(String key, NodeBase<T> child);
-	public NodeBase<T> get(String key);
+public interface NodeBase {
+	public void set(String key, Long value);
+	public void set(String key, NodeBase child);
+	public NodeBase get(String key);
 	
-	public T value();
+	public Long value();
 }

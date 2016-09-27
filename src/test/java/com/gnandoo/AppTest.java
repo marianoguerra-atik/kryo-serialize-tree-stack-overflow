@@ -39,16 +39,16 @@ public class AppTest extends TestCase {
 
 		Output output = new Output(new FileOutputStream("file.bin"));
 
-		Node<Long> node = new Node<Long>();
-		Node<Long> c1 = new Node<Long>();
+		Node node = new Node();
+		Node c1 = new Node();
 		node.set("c1", c1);
-		c1.set("c2", new Leaf<Long>(42L));
+		c1.set("c2", new Leaf(42L));
 
 		kryo.writeObject(output, node);
 		output.close();
 
 		Input input = new Input(new FileInputStream("file.bin"));
-		Node<Long> result = kryo.readObject(input, Node.class);
+		Node result = kryo.readObject(input, Node.class);
 		input.close();
 	}
 }

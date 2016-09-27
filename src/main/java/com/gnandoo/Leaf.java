@@ -1,26 +1,33 @@
 package com.gnandoo;
 
-public class Leaf<T> implements NodeBase<T> {
-	private T _value;
+public class Leaf implements NodeBase {
+	private Long _value;
 	
-	public Leaf(T value) {
+	public Leaf(Long value) {
 		this._value = value;
 	}
+	
+	public Leaf() {
+	}
 
-	public void set(String key, T value) {
+	public void set(String key, Long value) {
 		throw new IllegalArgumentException("can't set on a leaf: " + key + " -> " + value);
 	}
 
-	public void set(String key, NodeBase<T> child) {
+	public void set(String key, NodeBase child) {
 		throw new IllegalArgumentException("can't set on a leaf: " + key + " -> " + child);
 	}
 
-	public NodeBase<T> get(String key) {
+	public NodeBase get(String key) {
 		throw new IllegalArgumentException("can't get on a leaf: " + key);
 	}
 
-	public T value() {
+	public Long value() {
 		return this._value;
+	}
+	
+	public void setValue(Long value) {
+		this._value = value;
 	}
 
 	public String toString() {
