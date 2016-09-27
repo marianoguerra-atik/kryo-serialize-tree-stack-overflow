@@ -3,9 +3,19 @@ Kryo tree serialization stack overflow error sample project
 
 try::
 
-    mvn test
+    # fails
+    git checkout kryo-2.24.0
+    mvn clean test
 
-the test should fail with something like this::
+    # fails
+    git checkout kryo-3.0.3
+    mvn clean test
+
+    # passes
+    git checkout kryo-4.0.0
+    mvn clean test
+
+the test should fails with something like this on 2.24.0 and 3.0.3::
 
     T E S T S
     -------------------------------------------------------
