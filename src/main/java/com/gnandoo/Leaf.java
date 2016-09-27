@@ -3,6 +3,9 @@ package com.gnandoo;
 public class Leaf<T> implements NodeBase<T> {
 	private T _value;
 	
+	public Leaf() {
+	}
+
 	public Leaf(T value) {
 		this._value = value;
 	}
@@ -21,6 +24,10 @@ public class Leaf<T> implements NodeBase<T> {
 
 	public T value() {
 		return this._value;
+	}
+	
+	public void setValue(T value) {
+		this._value = value;
 	}
 
 	public String toString() {
