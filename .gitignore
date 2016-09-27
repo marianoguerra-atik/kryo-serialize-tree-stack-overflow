@@ -1,2 +1,5 @@
 target
 file.bin
+.classpath
+.project
+.settings
